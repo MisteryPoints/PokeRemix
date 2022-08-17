@@ -3,10 +3,7 @@ import { usePokemon } from '~/hooks'
 
 export function PokeItem(props) {
     const { urlPokemon } = props
-    const {loading, pokemon, getPokemonByURL} = usePokemon()
-    console.log('loading --->', loading)
-    console.log(pokemon)
-    console.log('###')
+    const {loading, pokemon, getPokemonByURL} = usePokemon() 
     
     useEffect(() => {
         getPokemonByURL(urlPokemon)
