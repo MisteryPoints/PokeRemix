@@ -12,6 +12,7 @@ export function PokeItem(props) {
     useEffect(() => {
         getPokemonByURL(urlPokemon)
     }, [urlPokemon])
+ 
     
     if(loading) {
         return ( 
