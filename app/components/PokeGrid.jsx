@@ -12,7 +12,7 @@ export function PokeGrid(props) {
                 <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-7">
                     {pokemons.map( (pokemon) => (
                         <PokeItem key={pokemon.name} urlPokemon={pokemon.url}/>
-                    ))}
+                        ))}
                 </div>
             </InfiniteScroll>
         </div>
