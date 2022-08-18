@@ -559,28 +559,32 @@ video {
   display: grid;
 }
 
-.h-\[calc\(100vh-320px\)\] {
-  height: calc(100vh - 320px);
+.hidden {
+  display: none;
 }
 
-.h-24 {
-  height: 6rem;
+.h-\[calc\(100vh-320px\)\] {
+  height: calc(100vh - 320px);
 }
 
 .h-7 {
   height: 1.75rem;
 }
 
-.w-24 {
-  width: 6rem;
+.h-24 {
+  height: 6rem;
+}
+
+.w-0 {
+  width: 0px;
 }
 
 .w-7 {
   width: 1.75rem;
 }
 
-.w-full {
-  width: 100%;
+.w-24 {
+  width: 6rem;
 }
 
 @-webkit-keyframes spin {
@@ -612,17 +616,12 @@ video {
   justify-content: center;
 }
 
+.self-center {
+  align-self: center;
+}
+
 .overflow-scroll {
   overflow: scroll;
-}
-
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-slate-700 {
@@ -639,11 +638,6 @@ video {
   text-align: center;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -653,28 +647,41 @@ video {
   font-weight: 700;
 }
 
-.text-blue-700 {
-  --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:cursor-pointer:hover {
-  cursor: pointer;
+.first\:block:first-child {
+  display: block;
 }
 
-.hover\:bg-slate-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+.last\:hidden:last-child {
+  display: none;
 }
 
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.hover\:block:hover {
+  display: block;
+}
+
+.hover\:inline-block:hover {
+  display: inline-block;
+}
+
+.hover\:hidden:hover {
+  display: none;
+}
+
+.hover\:first\:hidden:first-child:hover {
+  display: none;
+}
+
+.hover\:last\:block:last-child:hover {
+  display: block;
+}
+
+.peer:last-of-type ~ .peer-last-of-type\:hidden {
+  display: none;
 }
 
 @media (min-width: 640px) {

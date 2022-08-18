@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GiAbstract118 } from 'react-icons/gi'
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@remix-run/node";
 import { Header, PokeGrid } from '~/components'
