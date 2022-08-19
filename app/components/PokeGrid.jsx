@@ -1,17 +1,18 @@
 import InfiniteScroll from 'react-infinite-scroller'
-import { PokeItem } from '~/components'
+import { PokeItem, Loading } from '~/components'
+
 
 
 export function PokeGrid(props) {
-    const { pokemons } = props
+    const { pokemons, loadMore, checkPokemon } = props
     let scrollParentRef = null
 
     return (
-        <div className="h-[calc(100vh-320px)] md:h-[calc(100vh-72px)] overflow-scroll" ref={(ref) => {scrollParentRef = ref}}>
-            <InfiniteScroll loadMore={() => console.log('Mas Pokemons')} hasMore={true} useWindow={false} getScrollParent={()=> scrollParentRef}>
-                <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-7">
-                    {pokemons.map( (pokemon) => (
-                        <PokeItem key={pokemon.name} urlPokemon={pokemon.url}/>
+        <div className="h-[calc(100vh-72px)] md:h-[calc(100vh-72px)] overflow-x-auto scrollbar scrollbar-thumb-red-600 scrollbar-track-red-100" ref={(ref) => {scrollParentRef = ref}}>
+            <InfiniteScroll loadMore={loadMore} hasMore={true} loader={<Loading key={0}/>} useWindow={false} getScrollParent={()=> scrollParentRef}>
+                <div className="grid grid-cols-3 sm:grid-cols-6 m-2 md:grid-cols-5 lg:grid-cols-7">
+                    {pokemons.map( (pokemon) => ( 
+                        <PokeItem key={pokemon.name} urlPokemon={pokemon.url} checkPokemon={checkPokemon}/>
                         ))}
                 </div>
             </InfiniteScroll>

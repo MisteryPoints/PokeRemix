@@ -1,3 +1,7 @@
 export * from './Header'
 export * from './PokeGrid'
 export * from './PokeItem'
+export * from './Loading'
+export * from './PokeInfo'
+export * from './Footer'
+export * from './Search'
