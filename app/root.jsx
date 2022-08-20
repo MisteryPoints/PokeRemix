@@ -17,7 +17,11 @@ export const meta = () => ({
   
 });
 
+
 export default function App() {
+  let myHeaders = new Headers();
+
+  myHeaders.set('Access-Control-Allow-Origin', '*')
   return (
     <html lang="en">
       <head>

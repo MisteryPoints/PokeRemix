@@ -3,7 +3,7 @@ import { GiAbstract118 } from 'react-icons/gi'
 import { usePokemon } from '~/hooks'
 
 export function PokeItem(props) {
-    const { urlPokemon, checkPokemon } = props
+    const { urlPokemon, checkPokemon, pokemonSelected, pokemons } = props
     const {loading, pokemon, getPokemonByURL} = usePokemon()
     const [isShown, setIsShown] = useState(true)
      
@@ -15,6 +15,7 @@ export function PokeItem(props) {
     const setPokemon = () => {
         checkPokemon(pokemon)
     }
+ 
     
     if(loading) {
         return ( 

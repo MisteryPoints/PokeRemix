@@ -1,4 +1,4 @@
-import { env } from '~/utils'
+import { env } from '~/utils' 
 
 
 export async function getPokemonsApi() { 
@@ -33,11 +33,15 @@ export async function getPokemonsURLApi(url) {
 }
 
 export async function getPokemonsAllApi() {
-    const url = `${env.BASE_PATH}/pokemon?limit=10000`
-    try {
-        const response = await fetch(url)
-        const result = await response.json()
-        console.log(result)
+    try { 
+        const url = `${env.BASE_PATH}/pokemon?limit=1000000000000`
+        const response = await fetch(url , {
+            mode: 'cors',
+            headers: {
+              'Access-Control-Allow-Origin':'*'
+            }
+        })
+        const result = await response.json() 
         return result
     } catch (error) {
         throw error
