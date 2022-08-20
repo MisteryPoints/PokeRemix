@@ -6,7 +6,7 @@ const KEYS_TO_FILTER = ['name']
 
 export function Search(props) { 
 
-    const { className, loadPokemons, pokemonSelected } = props 
+    const { className, loadPokemons, setPokemonSelected } = props 
     const [pokemons, setPokemons] = useState([])
     const [searchText, setSearchText] = useState('')
     const data = useLoaderData() 
@@ -25,11 +25,12 @@ export function Search(props) {
         if(!searchText) loadPokemons(null)
         else loadPokemons(filteredPokemon)
     }
+     
   
 
     return (
         <Form className={`w-full ${className}`} onSubmit={onSearch}>
-            <input type="text" placeholder="Busca tu Pokemon" value={pokemonSelected ? pokemonSelected.name : searchText}  onChange={(e) => !e.target.value ? handleEmpty : setSearchText(e.target.value)} className="w-full outline-0 bg-red-200 py-4 px-6 md:rounded-bl-md capitalize" />
+            <input type="text" placeholder="Busca tu Pokemon" value={searchText}  onChange={(e) => setSearchText(e.target.value)} className="w-full outline-0 bg-red-200 py-4 px-6 md:rounded-bl-md capitalize" />
         </Form>
     )
 }

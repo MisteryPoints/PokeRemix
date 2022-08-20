@@ -37,7 +37,7 @@ export default function Index() {
           <PokeGrid pokemons={pokemonSearch ? pokemonSearch : pokemons} loadMore={loadMore} checkPokemon={checkPokemon} nextUrl={nextUrl} pokemonSelected={pokemonSelected} pokemonSearch={pokemonSearch}/>
         </div>
         <div className="w-6/6 hidden mb-2 md:w-2/6 md:h-[calc(100vh-100px)] md:flex md:flex-col md:items-center md:justify-between">
-          <Search loadPokemons={setPokemonSearch} pokemonSelected={pokemonSelected}/>
+          <Search loadPokemons={setPokemonSearch} setPokemonSelected={setPokemonSelected}/>
           <PokeInfo pokemon={pokemonSelected}/>
         </div>
       </div> 
